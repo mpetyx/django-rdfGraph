@@ -1,0 +1,4 @@
+django-tastypie
+rdflib
+rdflib-sqlite
+django
