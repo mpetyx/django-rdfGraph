@@ -3,7 +3,7 @@ __author__ = 'mpetyx'
 import rdflib
 from rdflib.plugins.sparql import prepareQuery
 from rdflib.namespace import FOAF
-from rdflib import RDF, BNode, Literal
+from rdflib import RDF, BNode, Literal, ConjunctiveGraph
 
 
 class handler(object):
@@ -11,7 +11,8 @@ class handler(object):
     configString = "testdata.db"
 
     def __init__(self):
-        g = rdflib.Graph(self.database)
+        # g = rdflib.Graph(self.database)
+        g = ConjunctiveGraph(self.database)
         g.open(self.configString, create=False)
         self._graph = g
 
@@ -30,7 +31,14 @@ class handler(object):
     def get_object_list(self):
         query = self._graph.query("select * where {?s ?p ?o}")
 
-        return query
+        results = []
+        for row in query:
+            # print row
+            example = dict()
+            example[row[1]] = row[0]
+            results.append(example)
+
+        return results
 
     def obj_create(self):
         temp = BNode()
@@ -48,3 +56,7 @@ class handler(object):
     WHERE
         { ?s a foaf:Person . }
     ''')
+
+
+graph = handler()
+print graph.get_object_list()

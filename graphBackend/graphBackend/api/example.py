@@ -17,5 +17,12 @@ graph.open(configString, create=False)
 for row in graph.query("select * where {?s ?p ?o}"):
     print row
 
+example = {}
+example[row[1]] = row[0]
+
+print example
+
+
+
 
 
