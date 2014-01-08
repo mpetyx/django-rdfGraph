@@ -19,3 +19,18 @@ class RdfObject(object):
     def to_dict(self):
         return self._data
 
+
+class dict2obj(object):
+    """
+    Convert dictionary to object
+    @source http://stackoverflow.com/a/1305561/383912
+    """
+    def __init__(self, d):
+        self.__dict__['d'] = d
+
+    def __getattr__(self, key):
+        value = self.__dict__['d'][key]
+        if type(value) == type({}):
+            return dict2obj(value)
+
+        return value

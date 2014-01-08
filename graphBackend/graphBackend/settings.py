@@ -27,6 +27,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+TASTYPIE_SWAGGER_API_MODULE = 'graphBackend.urls.api'
 
 # Application definition
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tastypie_swagger',
 )
 
 MIDDLEWARE_CLASSES = (

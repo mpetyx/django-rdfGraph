@@ -53,7 +53,19 @@ class PersonResource(Resource):
         #     new_obj = RdfObject(initial=result[1])
         #     new_obj.uuid = result[0]
         #     results.append(new_obj)
+
         results = []
+
+        example = {}
+        example['age'] = 2
+        example['user_uuid'] = 3
+        example['uuid'] = 56
+        example['created'] = 45
+
+        example = RdfObject(initial=example)
+
+        results.append(example)
+
 
         return results
 
