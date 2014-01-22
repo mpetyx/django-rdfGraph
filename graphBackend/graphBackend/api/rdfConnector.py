@@ -11,6 +11,17 @@ class rdfClient(object):
 
         return 1
 
+
+
+
+    def new(self):
+
+        # inherit the schema from resource
+
+        return 1
+
+
+
     def get_object_list(self, request):
 
         query = self._graph.sparql("select * where {?s ?p ?o}")

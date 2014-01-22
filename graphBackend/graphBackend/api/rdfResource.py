@@ -28,9 +28,10 @@ class PersonResource(Resource):
 
     def _bucket(self):
         client = self._client()
-        # Note that we're hard-coding the bucket to use. Fine for
-        # example purposes, but you'll want to abstract this.
-        return client.bucket('messages')
+        # Every bucket could actually infer its name from the resource and could actually implement the current specific
+        # graph. so for example, for person there could be a person_bucket_graph that with the add_new functionality could
+        # inherit its schema and connect it to that
+        return client.bucket('rdfbucket')
 
     # The following methods will need overriding regardless of your
     # data source.
@@ -45,7 +46,7 @@ class PersonResource(Resource):
         return kwargs
 
     def get_object_list(self, request):
-        # query = self._client().add('messages')
+        # query = self._client().add('rdfbucket')
         # query.map("function(v) { var data = JSON.parse(v.values[0].data); return [[v.key, data]]; }")
         # results = []
         #
