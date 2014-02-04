@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 
 TASTYPIE_SWAGGER_API_MODULE = 'graphBackend.urls.api'
 
+
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -64,6 +66,19 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+NEO4J_DATABASES = {
+    'default' : {
+        'HOST':'http://adam.sb01.stations.graphenedb.com',
+        'PORT':24789,
+        'ENDPOINT':'/db/data',
+        'username':"adam",
+        'password':'OYw1zQHT2eR9ynersL9F'
+    }
+}
+
+DATABASE_ROUTERS = ['neo4django.utils.Neo4djangoIntegrationRouter']
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

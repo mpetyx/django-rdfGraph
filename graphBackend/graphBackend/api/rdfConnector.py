@@ -5,13 +5,15 @@ from RdfObject import RdfObject
 
 
 class rdfClient(object):
-    def __init__(self):
+    # def __init__(self):
 
+
+
+
+    def bucket(self,bucket_name=None):
         self._graph = rdflib.Graph()
 
-        return 1
-
-
+        return self._graph
 
 
     def new(self):

@@ -8,8 +8,15 @@ from tastypie.api import Api
 
 from api.rdfResource import PersonResource
 
+
+
 api = Api(api_name='v01')
 api.register(PersonResource())
+
+
+from api.neoResource import EntryResource
+
+entry_resource = EntryResource()
 
 urlpatterns = patterns('',
                        # Examples:
@@ -18,6 +25,9 @@ urlpatterns = patterns('',
 
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'api/doc/', include('tastypie_swagger.urls', namespace='tastypie_swagger')),
+
+
+                       (r'^entry/', include(entry_resource.urls)),
 )
 
 urlpatterns = urlpatterns + api.urls

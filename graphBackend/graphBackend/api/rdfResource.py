@@ -8,6 +8,12 @@ from tastypie import fields
 from rdfConnector import rdfClient
 from RdfObject import RdfObject
 
+"""
+    or this is also working
+    https://gist.github.com/mhluongo/5789513
+
+    taken from http://stackoverflow.com/questions/16920180/create-rest-api-with-neo4j-and-django
+"""
 
 class PersonResource(Resource):
     # Just like a Django ``Form`` or ``Model``, we're defining all the
@@ -83,8 +89,12 @@ class PersonResource(Resource):
         bundle.obj = RdfObject(initial=kwargs)
         bundle = self.full_hydrate(bundle)
         bucket = self._bucket()
-        new_message = bucket.new(bundle.obj.uuid, data=bundle.obj.to_dict())
-        new_message.store()
+        # new_message = bucket.new(bundle.obj.uuid, data=bundle.obj.to_dict())
+        # new_message.store()
+        import pprint
+        temp = bundle.obj.to_dict()
+        pprint.pprint(temp)
+        print temp['age']
         return bundle
 
     def obj_update(self, bundle, request=None, **kwargs):
