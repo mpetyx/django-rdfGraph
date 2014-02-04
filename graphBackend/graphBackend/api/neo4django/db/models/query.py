@@ -782,7 +782,7 @@ class Query(object):
         self.where = False
 
         self.clear_limits()
-        self.clear_ordering()
+        self.clear_ordering(True)
 
         # for updates
         self.values = []
