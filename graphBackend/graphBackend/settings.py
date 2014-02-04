@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tastypie_swagger',
+    'graphBackend.api.neo4django',
 )
 
 MIDDLEWARE_CLASSES = (

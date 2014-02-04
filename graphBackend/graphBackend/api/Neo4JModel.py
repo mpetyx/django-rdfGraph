@@ -3,8 +3,8 @@ __author__ = 'mpetyx'
 
 # from neo4django.auth.models import User
 # from django.contrib.auth.models import User
-from neo4django.graph_auth.models import User
-from neo4django.db import models
+from .neo4django.graph_auth.models import User
+from .neo4django.db import models
 from django.template.defaultfilters import slugify
 
 """

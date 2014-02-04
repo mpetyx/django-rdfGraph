@@ -7,8 +7,8 @@ from threading import local
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.importlib import import_module
 
-from neo4django.decorators import transactional
-from neo4django.neo4jclient import EnhancedGraphDatabase
+from .decorators import transactional
+from .neo4jclient import EnhancedGraphDatabase
 
 
 class StubbornDict(dict):

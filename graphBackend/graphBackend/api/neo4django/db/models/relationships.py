@@ -7,11 +7,11 @@ from django.forms import ModelChoiceField, ModelMultipleChoiceField
 from django.utils.text import capfirst
 from django.dispatch import receiver
 
-from neo4django import Incoming, Outgoing
-from neo4django.db import DEFAULT_DB_ALIAS
-from neo4django.decorators import not_implemented, transactional
-from neo4django.utils import AssignableList, AttrRouter
-from neo4django.constants import INTERNAL_ATTR, ORDER_ATTR
+from ....neo4django import Incoming, Outgoing
+from ...db import DEFAULT_DB_ALIAS
+from ...decorators import not_implemented, transactional
+from ...utils import AssignableList, AttrRouter
+from ...constants import INTERNAL_ATTR, ORDER_ATTR
 from .base import NodeModel
 from .query import (NodeQuerySet, Query, cypher_rel_str)
 from .cypher import  (Clauses, Start, With, Match, Path, NodeComponent,

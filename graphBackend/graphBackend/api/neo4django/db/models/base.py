@@ -5,9 +5,9 @@ from django.conf import settings
 import neo4jrestclient.client as neo_client
 import neo4jrestclient.constants as neo_constants
 
-from neo4django.db import connections, DEFAULT_DB_ALIAS
-from neo4django.exceptions import NoSuchDatabaseError
-from neo4django.decorators import (not_implemented,
+from ...db import connections, DEFAULT_DB_ALIAS
+from ...exceptions import NoSuchDatabaseError
+from ...decorators import (not_implemented,
                                    alters_data,
                                    transactional,
                                    not_supported,
